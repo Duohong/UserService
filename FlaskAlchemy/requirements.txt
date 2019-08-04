@@ -1,0 +1,6 @@
+Flask==1.1.1
+Flask-SQLAlchemy==2.4.0
+Flask-Marshmallow==0.10.1
+Marshmallow-SQLAlchemy==0.17.0
+Werkzeug==0.15.5
+pyjwt==1.7.1
