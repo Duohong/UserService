@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   rabbit1:
@@ -16,6 +16,14 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+
+  redis1:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
   
   #db-sql:
   #  image: "mcr.microsoft.com/mssql/server"
@@ -23,7 +31,7 @@ services:
   #      SA_PASSWORD: "Your_password123"
   #      ACCEPT_EULA: "Y"
 
-  flask:
+  flask1:
     build: ./flask
     volumes: 
       - ./flask:/usr/src/app

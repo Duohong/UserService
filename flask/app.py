@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify, make_response
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 import datetime
-import rabbit
+from mongo import Mongo
+from rabbit import Rabbit
 
 # init app
 app = Flask(__name__)
@@ -22,6 +23,8 @@ def signup():
 # signin
 @app.route("/signin")
 def signin():
+    Mongo.save_new_user("created by duohong")
+    Rabbit.send_new_user("created by duohong")
     return "Created a user"
 
 # test

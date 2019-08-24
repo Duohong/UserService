@@ -12,7 +12,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 @app.route("/")
 def index():
-    return "duohong";
+    return "duohong"
 
 # database
 # easy to switch to ms sql server here.
